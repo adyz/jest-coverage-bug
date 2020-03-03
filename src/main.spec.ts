@@ -1,9 +1,43 @@
-import { isInternalLink } from './main'
+import * as angular from 'angular';
+import "angular-mocks";
+import {render} from './render';
 
-test('should return false given external link', () => {
-  expect(isInternalLink('https://google.com')).toBe(false)
+angular.module('testApp').component('testComponent', {
+  controller: function($uibModal){
+    console.log('Counter');
+
+
+    $uibModal.open({
+      // animation: false,
+      template: `<div>dada</div>`,
+    });
+  },
+  template: `<p>Test</p>`
 })
 
-test('should return true given internal link', () => {
-  expect(isInternalLink('/some-page')).toBe(true)
+
+// Setup before each test
+beforeEach(() => {
+
+  // Mock default module
+  angular.mock.module('testApp');
+
+
+});
+
+
+
+// Some tests
+describe('Example', () => {
+
+  it('Renders a counter', async() => {
+      const { getByText } = render(`<test-component></test-component>`, {
+          modules: ['testApp']
+      })
+      await new Promise(res => setTimeout(res, 1000))
+
+      expect(getByText('Test')).toBeDefined()
+  })
+
 })
+

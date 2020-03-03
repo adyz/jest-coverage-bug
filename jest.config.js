@@ -1,4 +1,5 @@
 module.exports = {
+    setupFilesAfterEnv: ["<rootDir>/src/init.ts"],
     roots: ['<rootDir>/src'],
     transform: {
       '^.+\\.tsx?$': 'ts-jest',
