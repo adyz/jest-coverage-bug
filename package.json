@@ -13,15 +13,20 @@
     "@types/angular": "^1.6.57",
     "@types/angular-mocks": "^1.7.0",
     "@types/angular-ui-bootstrap": "^1.0.0",
+    "@types/jquery": "^3.3.33",
     "angular": "^1.7.9",
     "angular-mocks": "^1.7.9",
-    "angular-ui-bootstrap": "^2.5.6"
+    "angular-ui-bootstrap": "^2.5.6",
+    "jquery": "^3.4.1",
+    "ts-loader": "^6.2.1"
   },
   "devDependencies": {
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.6",
     "jest": "^24.9.0",
     "ts-jest": "^24.3.0",
-    "typescript": "^3.7.4"
+    "typescript": "^3.7.4",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
